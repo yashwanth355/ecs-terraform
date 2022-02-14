@@ -1,0 +1,2 @@
+{"L":"\u001b[34mINFO\u001b[0m","timestamp":"2022-02-08T13:00:18.812+0530","C":"logger/logger.go:75","M":"starting logger"}
+{"L":"\u001b[34mINFO\u001b[0m","timestamp":"2022-02-08T13:00:18.812+0530","C":"cmd/main.go:16","M":"START logging app service"}

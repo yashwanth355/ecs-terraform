@@ -1,0 +1,60 @@
+openapi: 3.0.1
+info:
+  title: user management service
+  description: This is a sample server for usermanagement service
+  termsOfService: www.ccl.com
+  contact:
+    email: mayank@kasvibes.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+  - url: https://kasvibes/v1
+  - url: http://kasvibes/v1
+tags:
+  - name: usv
+    description: Everything about user management
+    externalDocs:
+      description: Find out usermanagement service
+      url: http://swagger.io
+paths:
+  /account:
+    post:
+      tags:
+        - accountdetails
+      summary: getting account details
+      description: leadid
+      operationId: accountDetails
+      requestBody:
+        description: getting account details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Account'
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        leadid:
+          type: integer
+        role:
+          type: string
+        convertleadtoaccount:
+          type: boolean
+        approve:
+          type: boolean
+        reject:
+          type: boolean
+        comments:
+          type: string

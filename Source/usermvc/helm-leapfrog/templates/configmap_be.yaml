@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  DB_PORT: '{{ .Values.dbport }}'
+  DB_NAME: '{{ .Values.dbname }}'
+  DB_USERNAME: '{{ .Values.dbusername }}'
+  DB_PASSWORD: '{{ .Values.dbpassword }}'
+  DB_HOST: '{{ .Values.dbhost }}'
+kind: ConfigMap
+metadata:
+  labels:
+    service: {{ .Values.service_be }}
+  name: {{ .Values.configmap_env_be }}

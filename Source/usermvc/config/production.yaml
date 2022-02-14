@@ -1,0 +1,13 @@
+app:
+  host: "localhost"
+  port: 8080
+
+
+
+logger:
+  filename:   "app.log"
+  max_size:    10
+  max_age:     10
+  max_backups: 10
+  local_time:  false
+  compress:   false

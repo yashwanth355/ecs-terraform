@@ -1,0 +1,23 @@
+beimage: 473666746939.dkr.ecr.ap-south-1.amazonaws.com/ccl_ecr:dev_latest
+replica_count: 1
+config_version: v1
+config_dir: config
+configmap_env_be: env-vars-be
+secret_name: sampleappsecret 
+volume_name: config-volume
+minReplicas: 1
+maxReplicas: 1
+targetCPUUtilizationPercentage: 95
+requests_cpu: 1000m
+requests_memory: 1024Mi
+limits_memory: 3584Mi
+limits_cpu: 2000m
+service_be: leapfrog-backend-dev
+containerport_be: 3000
+exposedport_be: 3000
+dbport: aaa
+dbname: aaa
+dbusername: aaa
+dbpassword: aaa
+dbhost: aaa
+

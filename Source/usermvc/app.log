@@ -1,0 +1,2 @@
+{"L":"\u001b[34mINFO\u001b[0m","timestamp":"2021-06-21T16:00:44.389+0530","C":"logger/logger.go:79","M":"starting logger"}
+{"L":"\u001b[34mINFO\u001b[0m","timestamp":"2021-06-21T16:00:44.389+0530","C":"usermvc/main.go:14","M":"START logging app service"}

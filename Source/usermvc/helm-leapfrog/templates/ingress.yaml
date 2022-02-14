@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.service_be }}-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+spec:
+  rules:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: {{ .Values.service_be }}
+              servicePort: {{ .Values.exposedport_be }}
+  # - http:
+  #     paths:
+  #     #- path: /leapfrog(/|$)(.*)
+  #     - path: /leapfrog/(.*)
+  #       pathType: Prefix
+  #       backend:
+  #         serviceName: {{ .Values.service_be }}
+  #         servicePort: {{ .Values.exposedport_be }}

@@ -1,0 +1,20 @@
+{
+    "loadBalancers": [
+        {
+            "targetGroupArn": "",
+            "containerName": "",
+            "containerPort": 3000
+        }
+    ],
+    "desiredCount": 3,
+    "role": "ecsServiceRole",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 100
+    },
+    "launchType": "EC2",
+    "deploymentController": {
+        "type": "ECS"
+    }
+   
+}

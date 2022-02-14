@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.service_be }}-deployment
+  labels:
+    app: {{ .Values.service_be }}
+spec:
+  replicas: {{ .Values.replica_count }}
+  selector:
+    matchLabels:
+      app: {{ .Values.service_be }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.service_be }}
+    spec:
+      containers:
+      - name: {{ .Values.service_be }}
+        image: {{ .Values.beimage }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.configmap_env_be }}
+       
+        env:
+        - name: ALLOW_EMPTY_PASSWORD
+          value: "yes"
+        ports:
+        - containerPort: {{ .Values.containerport_be }}
+        volumeMounts:
+        - name: {{ .Values.volume_name }}-be
+          mountPath: /local
+      imagePullSecrets:
+      - name: {{ .Values.secret_name }} 
+      volumes:
+        - name: {{ .Values.volume_name }}-be
+          configMap:
+            name: {{ .Values.configmap_env_be }}        
+           
+      # resources:
+      #   requests:
+      #     cpu: {{ .Values.requests_cpu }}
+      #     memory: {{ .Values.requests_memory }}
+      #   limits:
+      #     cpu: {{ .Values.limits_cpu }}
+      #     memory: {{ .Values.limits_memory }}
+
+

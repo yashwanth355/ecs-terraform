@@ -1,6 +1,6 @@
 resource "aws_security_group" "alb" {
-  name        = "${var.cluster_name}_alb_security_group"
-  description = "${var.cluster_name}_load balancer security group"
+  name        = "${var.cluster_name}-${var.environment}_alb_security_group"
+  description = "${var.cluster_name}-${var.environment}_load balancer security group"
   vpc_id      = var.vpc_id
 
   ingress {
@@ -26,6 +26,6 @@ resource "aws_security_group" "alb" {
   }
 
   tags = {
-    Name = "${var.cluster_name}-alb-security-group"
+    Name = "${var.cluster_name}-${var.environment}-alb-security-group"
   }
 }

@@ -1,5 +1,5 @@
 resource "aws_alb" "alb" {
-  name            = "${var.cluster_name}-alb"
+  name            = "${var.cluster_name}-${var.environment}-alb"
   security_groups = ["${aws_security_group.alb.id}"]
   subnets         = var.subnet_ids
   tags = {

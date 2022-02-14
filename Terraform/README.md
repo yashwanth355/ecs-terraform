@@ -2,7 +2,7 @@
 
 terraform init
 
-terraform plan -var "environment=dev" --var-file .\environments\dev.tfvars 
+terraform plan -var "environment=dev" --var-file .\environments\dev.tfvars
 
 terraform apply -var "environment=dev" --var-file .\environments\dev.tfvars --auto-approve
 

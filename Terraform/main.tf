@@ -14,7 +14,7 @@ module "alb" {
   source = "./modules/alb"
   
   environment = var.environment
-  cluster_name = module.ecs-cluster.cluster_name
+  cluster_name = var.cluster_name
   aws_region = var.aws_region
   vpc_id = var.vpc_id
   subnet_ids = var.alb_subnet_ids

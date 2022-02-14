@@ -1,4 +1,4 @@
-cluster_name = "demo-ecs2"
+cluster_name = "erp-api-dev"
 
 aws_region = "ap-south-1"
 

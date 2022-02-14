@@ -13,3 +13,11 @@ provider "aws" {
   secret_key = "${var.aws_secret_key}"
   version = "~> 3.0"
 }
+
+terraform {
+  backend "s3" {
+    bucket = "terraform--ecs"
+    key    = "sample/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}
